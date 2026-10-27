@@ -29,3 +29,16 @@ class Race {
     );
   }
 }
+
+extension RaceListFilter on List<Race> {
+  List<Race> get completed {
+    final now = DateTime.now();
+    return where((race) {
+      final timeStr = race.time.isNotEmpty ? race.time : "00:00:00Z";
+      final dt =
+          DateTime.tryParse("${race.date}T$timeStr") ??
+          DateTime.tryParse(race.date);
+      return dt != null && dt.isBefore(now);
+    }).toList();
+  }
+}

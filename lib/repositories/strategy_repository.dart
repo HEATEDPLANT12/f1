@@ -1,8 +1,8 @@
 import '../models/stint.dart';
 import '../models/weather.dart';
 
-import '../services/stint_service.dart';
-import '../services/weather_service.dart';
+import '../services/openf1/stint_service.dart';
+import '../services/openf1/weather_service.dart';
 
 class StrategyRepository {
   final StintService stintService;

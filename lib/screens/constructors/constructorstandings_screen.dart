@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/constructor_provider.dart';
+import '../../providers/standings/constructor_provider.dart';
 
 class ConstructorstandingsScreen extends ConsumerWidget {
   const ConstructorstandingsScreen({super.key});

@@ -1,8 +1,8 @@
 import '../models/driver_status.dart';
-import '../services/openf1_driver_service.dart';
-import '../services/position_service.dart';
-import '../services/interval_service.dart';
-import '../services/stint_service.dart';
+import '../services/openf1/openf1_driver_service.dart';
+import '../services/openf1/position_service.dart';
+import '../services/openf1/interval_service.dart';
+import '../services/openf1/stint_service.dart';
 
 class DriverRepository {
   final OpenF1DriverService driverService;

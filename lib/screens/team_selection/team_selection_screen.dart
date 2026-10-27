@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/teams.dart';
-import '../../providers/team_provider.dart';
+import '../../providers/app/team_provider.dart';
 
 class TeamSelectionScreen extends ConsumerStatefulWidget {
   const TeamSelectionScreen({super.key});
@@ -118,20 +118,16 @@ class _TeamSelectionScreenState extends ConsumerState<TeamSelectionScreen> {
                           context.go('/main');
                         },
 
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        child: Container(
+                          width: 150,
+                          height: 85,
 
-                          children: [
-                            Container(
-                              width: 150,
-                              height: 85,
+                          decoration: BoxDecoration(
+                            color: team.tileColor,
 
-                              decoration: BoxDecoration(
-                                color: team.tileColor,
+                            borderRadius: BorderRadius.circular(18),
 
-                                borderRadius: BorderRadius.circular(18),
-
-                                /*boxShadow: [
+                            /*boxShadow: [
                                   BoxShadow(
                                     color: team.tileColor.withOpacity(0.35),
 
@@ -139,25 +135,25 @@ class _TeamSelectionScreenState extends ConsumerState<TeamSelectionScreen> {
                                     spreadRadius: 1,
                                   ),
                                 ],*/
-                              ),
+                          ),
 
-                              child: Center(
-                                child: SvgPicture.asset(
-                                  team.logoPath,
+                          child: Center(
+                            child: SvgPicture.asset(
+                              team.logoPath,
 
-                                  width: 72,
+                              width: 72,
 
-                                  /*colorFilter: const ColorFilter.mode(
+                              /*colorFilter: const ColorFilter.mode(
                                     Color.fromARGB(255, 79, 76, 76),
                                     BlendMode.srcIn,
                                   ),*/
-                                ),
-                              ),
                             ),
+                          ),
+                        ),
 
-                            const SizedBox(height: 14),
+                        //const SizedBox(height: 14),
 
-                            Text(
+                        /*Text(
                               team.name,
 
                               textAlign: TextAlign.center,
@@ -167,9 +163,7 @@ class _TeamSelectionScreenState extends ConsumerState<TeamSelectionScreen> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
-                            ),
-                          ],
-                        ),
+                            ),*/
                       ),
                     );
                   },

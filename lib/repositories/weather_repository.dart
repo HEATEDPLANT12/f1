@@ -1,5 +1,5 @@
 import '../models/weather.dart';
-import '../services/weather_service.dart';
+import '../services/openf1/weather_service.dart';
 
 class WeatherRepository {
   final WeatherService weatherService;

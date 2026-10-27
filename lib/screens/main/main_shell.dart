@@ -1,13 +1,15 @@
 import 'package:f1/models/team.dart';
-import 'package:f1/providers/team_provider.dart';
+import 'package:f1/providers/app/team_provider.dart';
+import 'package:f1/screens/dashboard/dashboard_sections/dashboard_header.dart';
+//import 'package:f1/screens/standings/standings_screen.dart';
+import 'package:f1/screens/standings/standings_tabs.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 //import '../../models/team.dart';
 import '../dashboard/dashboard_screen.dart';
-import '../drivers/drivers_screen.dart';
-import '../strategy/strategy_screen.dart';
+import '../drivers/driverselection_screen.dart';
 import '../engineer/engineer_screen.dart';
 import '../replay/replay_screen.dart';
 //import '../../providers/team_provider.dart';
@@ -32,15 +34,55 @@ class _MainShellState extends ConsumerState<MainShell> {
     final team = ref.watch(teamProvider);
 
     final pages = [
-      DashboardScreen(),
-      DriversScreen(team: team),
-      StrategyScreen(team: team),
+      DashboardScreen(team: team),
+      DriverSelectionScreen(team: team),
+      StandingsSection(team: team),
       EngineerScreen(team: team),
       ReplayScreen(team: team),
     ];
 
+    final screenTitles = [
+      "DASHBOARD",
+      "DRIVERS",
+      "STANDINGS",
+      "ENGINEER",
+      "REPLAY",
+    ];
+
     return Scaffold(
-      body: IndexedStack(index: currentIndex, children: pages),
+      backgroundColor: team.accentColor,
+      //body: IndexedStack(index: currentIndex, children: pages),
+      body: SafeArea(
+        bottom: false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+              child: DashboardHeader(team: team),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+              child: Text(
+                screenTitles[currentIndex],
+                textAlign: TextAlign.start,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.2,
+                ),
+              ),
+            ),
+
+            //const SizedBox(height: 8),
+            Expanded(
+              child: IndexedStack(index: currentIndex, children: pages),
+            ),
+          ],
+        ),
+      ),
 
       bottomNavigationBar: SafeArea(
         top: false,

@@ -1,12 +1,8 @@
-import 'package:f1/providers/interval_provider.dart';
-import 'package:f1/providers/openf1_driver_provider.dart';
-import 'package:f1/providers/position_provider.dart';
-import 'package:f1/providers/session_provider.dart';
-import 'package:f1/providers/stint_provider.dart';
+import 'package:f1/providers/race/stint_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/constructor_provider.dart';
+import '../../providers/standings/constructor_provider.dart';
 
 class SessionsScreen extends ConsumerWidget {
   const SessionsScreen({super.key});

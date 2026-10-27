@@ -2,6 +2,7 @@ class OpenF1Driver {
   final int driverNumber;
   final String fullName;
   final String broadcastName;
+  final String code;
   final String teamName;
   final String teamColour;
   final String? countryCode;
@@ -11,6 +12,7 @@ class OpenF1Driver {
     required this.driverNumber,
     required this.fullName,
     required this.broadcastName,
+    required this.code,
     required this.teamName,
     required this.teamColour,
     required this.countryCode,
@@ -22,6 +24,7 @@ class OpenF1Driver {
       driverNumber: json["driver_number"],
       fullName: json["full_name"],
       broadcastName: json["broadcast_name"],
+      code: json["name_acronym"],
       teamName: json["team_name"],
       teamColour: json["team_colour"],
       countryCode: json["country_code"],

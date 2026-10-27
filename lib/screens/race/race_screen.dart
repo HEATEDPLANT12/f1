@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/race_provider.dart';
+import '../../providers/race/race_provider.dart';
 
 class RaceScreen extends ConsumerWidget {
   const RaceScreen({super.key});

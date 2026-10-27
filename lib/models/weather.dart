@@ -1,6 +1,7 @@
 class Weather {
   final String date;
   final int sessionKey;
+  final int meetingKey;
 
   final double? airTemperature;
   final double? trackTemperature;
@@ -17,6 +18,7 @@ class Weather {
     required this.windSpeed,
     required this.date,
     required this.sessionKey,
+    required this.meetingKey,
     required this.windDirection,
   });
 
@@ -24,6 +26,7 @@ class Weather {
     return Weather(
       date: json["date"],
       sessionKey: json["session_key"],
+      meetingKey: json["meeting_key"],
       airTemperature: double.tryParse(
         json["air_temperature"]?.toString() ?? "",
       ),

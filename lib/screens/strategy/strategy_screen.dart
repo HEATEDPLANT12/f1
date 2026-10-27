@@ -1,5 +1,5 @@
-import 'package:f1/providers/standings_provider.dart';
-import 'package:f1/providers/strategy_provider.dart';
+import 'package:f1/providers/standings/standings_provider.dart';
+import 'package:f1/providers/strategy/strategy_provider.dart';
 //import 'package:f1/providers/weather_provider.dart';
 import 'package:flutter/material.dart';
 import '../../models/team.dart';
